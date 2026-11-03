@@ -1,0 +1,20 @@
+{
+  "name": "terraform-power-platform",
+  "private": true,
+  "type": "module",
+  "description": "Visual documentation and an environment builder for the Microsoft Power Platform Terraform provider",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "preview": "vitepress preview docs",
+    "extract": "node scripts/extract-provider.mjs",
+    "test": "node --import ./scripts/json-loader.mjs --test scripts/builder.test.mjs"
+  },
+  "devDependencies": {
+    "@fontsource-variable/archivo": "^5.3.0",
+    "@fontsource-variable/atkinson-hyperlegible-next": "^5.3.0",
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "vitepress": "^1.6.4",
+    "vue": "^3.5.22"
+  }
+}

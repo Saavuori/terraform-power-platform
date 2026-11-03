@@ -1,0 +1,142 @@
+---
+title: powerplatform_billing_policy_environment
+description: "This resource allows you to manage the environments associated with a billing policy."
+outline: [2, 3]
+---
+
+# powerplatform_billing_policy_environment
+
+<TypeHeader name="powerplatform_billing_policy_environment" kind="resource" />
+
+This resource allows you to manage the environments associated with a [billing policy](https://learn.microsoft.com/power-platform/admin/pay-as-you-go-overview#what-is-a-billing-policy). A billing policy is a set of rules that define how a tenant is billed for usage of Power Platform services. A billing policy is associated with a billing instrument, which is a subscription and resource group that is used to pay for usage of Power Platform services.
+
+## Relationships
+
+<RelationDiagram name="powerplatform_billing_policy_environment" kind="resource" />
+
+## Example usage
+
+```hcl
+terraform {
+  required_providers {
+    powerplatform = {
+      source = "microsoft/power-platform"
+    }
+    azurerm = {
+      source = "hashicorp/azurerm"
+    }
+    azurecaf = {
+      source = "aztfmod/azurecaf"
+    }
+  }
+}
+
+provider "powerplatform" {
+  use_cli = true
+}
+
+provider "azurerm" {
+  features {}
+  use_cli = true
+}
+
+provider "azurecaf" {
+}
+
+data "azurerm_client_config" "current" {
+}
+
+resource "azurecaf_name" "rg_example_name" {
+  name          = "power-platform-billing"
+  resource_type = "azurerm_resource_group"
+  random_length = 5
+  clean_input   = true
+}
+
+resource "azurerm_resource_group" "rg_example" {
+  name     = azurecaf_name.rg_example_name.result
+  location = "westeurope"
+}
+
+resource "powerplatform_billing_policy" "pay_as_you_go" {
+  name     = "payAsYouGoBillingPolicyExample"
+  location = "europe"
+  status   = "Enabled"
+  billing_instrument = {
+    resource_group  = azurerm_resource_group.rg_example.name
+    subscription_id = data.azurerm_client_config.current.subscription_id
+  }
+}
+
+resource "powerplatform_environment" "env1" {
+  display_name     = "billing_policy_example_environment_1"
+  location         = "europe"
+  azure_region     = "northeurope"
+  environment_type = "Sandbox"
+}
+
+resource "powerplatform_environment" "env2" {
+  display_name     = "billing_policy_example_environment_2"
+  location         = "europe"
+  azure_region     = "northeurope"
+  environment_type = "Sandbox"
+}
+
+resource "powerplatform_billing_policy_environment" "pay_as_you_go_policy_envs" {
+  billing_policy_id = powerplatform_billing_policy.pay_as_you_go.id
+  environments      = [powerplatform_environment.env1.id, powerplatform_environment.env2.id]
+}
+```
+
+<OpenInBuilder type="powerplatform_billing_policy_environment" />
+
+## Schema
+
+### Required
+
+<div class="pp-attrs">
+
+| Attribute | Type | Description |
+| --- | --- | --- |
+| `billing_policy_id`  | String | The id of the billing policy |
+| `environments`  | Set of String | The environments associated with the billing policy |
+
+</div>
+
+### Optional
+
+<div class="pp-attrs">
+
+| Attribute | Type | Description |
+| --- | --- | --- |
+| `timeouts`  | Attributes | — · [nested schema](#nested-timeouts) |
+
+</div>
+
+### Nested schemas
+
+#### `timeouts` {#nested-timeouts}
+
+**Optional**
+
+<div class="pp-attrs">
+
+| Attribute | Type | Description |
+| --- | --- | --- |
+| `create`  | String | A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as "30s" or "2h45m". Valid time units are "s" (seconds), "m" (minutes), "h" (hours). |
+| `delete`  | String | A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as "30s" or "2h45m". Valid time units are "s" (seconds), "m" (minutes), "h" (hours). Setting a timeout for a Delete operation is only applicable if changes are saved into state before the destroy operation occurs. |
+| `read`  | String | A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as "30s" or "2h45m". Valid time units are "s" (seconds), "m" (minutes), "h" (hours). Read operations occur during any refresh or planning operation when refresh is enabled. |
+| `update`  | String | A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as "30s" or "2h45m". Valid time units are "s" (seconds), "m" (minutes), "h" (hours). |
+
+</div>
+
+## Import
+
+```shell
+# Billing policy environment resource can be imported using the billing policy id (replace with a real powerplatform_billing_policy id of the powerplatform_billing_policy resource)
+terraform import powerplatform_billing_policy_environment.example 00000000-0000-0000-0000-000000000000
+```
+
+---
+
+<small>Resource generated from the upstream schema docs (provider v4.2.1). [Terraform Registry](https://registry.terraform.io/providers/microsoft/power-platform/latest/docs/resources/billing_policy_environment) · [Go source](https://github.com/microsoft/terraform-provider-power-platform/blob/main/internal/services/licensing/resource_billing_policy_environment.go)</small>

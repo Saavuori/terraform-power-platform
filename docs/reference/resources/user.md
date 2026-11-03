@@ -1,0 +1,184 @@
+---
+title: powerplatform_user
+description: "This resource associates a user to a Power Platform environment."
+outline: [2, 3]
+---
+
+# powerplatform_user
+
+<TypeHeader name="powerplatform_user" kind="resource" />
+
+This resource associates a user to a Power Platform environment.
+
+**Upcoming breaking change in v5.0.0:** Import IDs will require the composite `environment_id/user_aad_id` format, where `user_aad_id` is the user's Microsoft Entra object ID (`aad_id`). Legacy single-ID imports will no longer be supported. Update import commands and import blocks when upgrading. This resource is not deprecated, and current import behavior remains unchanged until v5.0.0.
+
+Additional Resources:
+
+* [Add users to an environment](https://learn.microsoft.com/power-platform/admin/add-users-to-environment)
+
+* [Overview of User Security](https://learn.microsoft.com/power-platform/admin/grant-users-access)
+
+*Note:* When starting with non Dataverse environments, and adding Dataverse later, the 'Environment Admin' and 'Environment Maker' used earlier in `security_roles` will not work inside Dataverse. You will need to use the Dataverse security roles instead.
+
+## Relationships
+
+<RelationDiagram name="powerplatform_user" kind="resource" />
+
+## Example usage
+
+```hcl
+terraform {
+  required_providers {
+    powerplatform = {
+      source = "microsoft/power-platform"
+    }
+    azuread = {
+      source = "hashicorp/azuread"
+    }
+    random = {
+      source = "hashicorp/random"
+    }
+  }
+}
+
+provider "powerplatform" {
+  use_cli = true
+}
+
+provider "azuread" {
+  use_cli = true
+}
+
+data "azuread_domains" "aad_domains" {
+  only_initial = true
+}
+
+locals {
+  domain_name = data.azuread_domains.aad_domains.domains[0].domain_name
+}
+
+resource "random_password" "passwords" {
+  min_upper        = 1
+  min_lower        = 1
+  min_numeric      = 1
+  min_special      = 1
+  length           = 16
+  special          = true
+  override_special = "_%@"
+}
+
+resource "azuread_user" "test_user" {
+  user_principal_name = "user_example@${local.domain_name}"
+  display_name        = "user_example"
+  mail_nickname       = "user_example"
+  password            = random_password.passwords.result
+  usage_location      = "US"
+}
+
+resource "powerplatform_environment" "dataverse_user_example" {
+  display_name     = "dataverse_user_example"
+  location         = "europe"
+  environment_type = "Sandbox"
+  dataverse = {
+    language_code     = "1033"
+    currency_code     = "USD"
+    security_group_id = "00000000-0000-0000-0000-000000000000"
+  }
+}
+
+//adding new user to the dataverse environment
+resource "powerplatform_user" "new_dataverse_user" {
+  environment_id = powerplatform_environment.dataverse_user_example.id
+  security_roles = [
+    "e0d2794e-82f3-e811-a951-000d3a1bcf17", // bot author
+  ]
+  aad_id         = azuread_user.test_user.id
+  disable_delete = false
+}
+
+resource "powerplatform_environment" "non_dataverse_user_example" {
+  display_name     = "non_dataverse_user_example"
+  location         = "europe"
+  environment_type = "Sandbox"
+}
+
+//adding new user to the environment that does not have dataverse
+resource "powerplatform_user" "new_non_dataverse_user" {
+  environment_id = powerplatform_environment.non_dataverse_user_example.id
+  security_roles = [
+    "Environment Admin",
+    "Environment Maker"
+  ]
+  aad_id         = azuread_user.test_user.id
+  disable_delete = false
+}
+```
+
+<OpenInBuilder type="powerplatform_user" />
+
+## Schema
+
+### Required
+
+<div class="pp-attrs">
+
+| Attribute | Type | Description |
+| --- | --- | --- |
+| `aad_id`  | String | Entra user object id |
+| `environment_id`  | String | Unique environment id (guid) |
+
+</div>
+
+### Optional
+
+<div class="pp-attrs">
+
+| Attribute | Type | Description |
+| --- | --- | --- |
+| `disable_delete`  | Boolean | Disable delete. When set to `True` is expects that (Disable Delte)[https://learn.microsoft.com/power-platform/admin/delete-users?WT.mc_id=ppac_inproduct_settings#soft-delete-users-in-power-platform] feature to be enabled.Removing resource will try to delete the systemuser from Dataverse. This is the default behaviour. If you just want to remove the resource and not delete the user from Dataverse, set this propertyto `False` |
+| `security_roles`  | Set of String | Security roles Ids assigned to the Dataverse userWhen working with non Dataverse environments, only 'Environment Admin' and 'Environment Maker' role values are allowed |
+| `timeouts`  | Attributes | — · [nested schema](#nested-timeouts) |
+
+</div>
+
+### Read-only
+
+<div class="pp-attrs">
+
+| Attribute | Type | Description |
+| --- | --- | --- |
+| `business_unit_id`  | String | Id of the business unit to which the user belongs |
+| `first_name`  | String | User first name |
+| `id`  | String | Unique user id (guid) |
+| `last_name`  | String | User last name |
+| `user_principal_name`  | String | User principal name |
+
+</div>
+
+### Nested schemas
+
+#### `timeouts` {#nested-timeouts}
+
+**Optional**
+
+<div class="pp-attrs">
+
+| Attribute | Type | Description |
+| --- | --- | --- |
+| `create`  | String | A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as "30s" or "2h45m". Valid time units are "s" (seconds), "m" (minutes), "h" (hours). |
+| `delete`  | String | A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as "30s" or "2h45m". Valid time units are "s" (seconds), "m" (minutes), "h" (hours). Setting a timeout for a Delete operation is only applicable if changes are saved into state before the destroy operation occurs. |
+| `read`  | String | A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as "30s" or "2h45m". Valid time units are "s" (seconds), "m" (minutes), "h" (hours). Read operations occur during any refresh or planning operation when refresh is enabled. |
+| `update`  | String | A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as "30s" or "2h45m". Valid time units are "s" (seconds), "m" (minutes), "h" (hours). |
+
+</div>
+
+## Import
+
+```shell
+# User resource can be imported using the Entra Object Id (replace with a real Entra Object Id)
+terraform import powerplatform_user.example 00000000-0000-0000-0000-000000000000
+```
+
+---
+
+<small>Resource generated from the upstream schema docs (provider v4.2.1). [Terraform Registry](https://registry.terraform.io/providers/microsoft/power-platform/latest/docs/resources/user) · [Go source](https://github.com/microsoft/terraform-provider-power-platform/blob/main/internal/services/authorization/resource_user.go)</small>

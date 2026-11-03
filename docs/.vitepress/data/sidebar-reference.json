@@ -1,0 +1,284 @@
+[
+ {
+  "text": "Environments",
+  "collapsed": true,
+  "items": [
+   {
+    "text": "environment",
+    "link": "/reference/resources/environment"
+   },
+   {
+    "text": "environment_disaster_recovery",
+    "link": "/reference/resources/environment_disaster_recovery"
+   },
+   {
+    "text": "environment_group",
+    "link": "/reference/resources/environment_group"
+   },
+   {
+    "text": "environment_group_rule_set",
+    "link": "/reference/resources/environment_group_rule_set"
+   },
+   {
+    "text": "environment_settings",
+    "link": "/reference/resources/environment_settings"
+   },
+   {
+    "text": "environment_wave",
+    "link": "/reference/resources/environment_wave"
+   },
+   {
+    "text": "managed_environment",
+    "link": "/reference/resources/managed_environment"
+   },
+   {
+    "text": "environment_settings (data)",
+    "link": "/reference/data-sources/environment_settings"
+   },
+   {
+    "text": "environment_templates (data)",
+    "link": "/reference/data-sources/environment_templates"
+   },
+   {
+    "text": "environments (data)",
+    "link": "/reference/data-sources/environments"
+   }
+  ]
+ },
+ {
+  "text": "Governance & Security",
+  "collapsed": true,
+  "items": [
+   {
+    "text": "admin_management_application",
+    "link": "/reference/resources/admin_management_application"
+   },
+   {
+    "text": "data_loss_prevention_policy",
+    "link": "/reference/resources/data_loss_prevention_policy"
+   },
+   {
+    "text": "enterprise_policy",
+    "link": "/reference/resources/enterprise_policy"
+   },
+   {
+    "text": "rbac_role_assignment",
+    "link": "/reference/resources/rbac_role_assignment"
+   },
+   {
+    "text": "tenant_isolation_policy",
+    "link": "/reference/resources/tenant_isolation_policy"
+   },
+   {
+    "text": "tenant_settings",
+    "link": "/reference/resources/tenant_settings"
+   },
+   {
+    "text": "data_loss_prevention_policies (data)",
+    "link": "/reference/data-sources/data_loss_prevention_policies"
+   },
+   {
+    "text": "rbac_role_assignments (data)",
+    "link": "/reference/data-sources/rbac_role_assignments"
+   },
+   {
+    "text": "role_definitions (data)",
+    "link": "/reference/data-sources/role_definitions"
+   },
+   {
+    "text": "tenant_settings (data)",
+    "link": "/reference/data-sources/tenant_settings"
+   }
+  ]
+ },
+ {
+  "text": "Licensing & Billing",
+  "collapsed": true,
+  "items": [
+   {
+    "text": "billing_policy",
+    "link": "/reference/resources/billing_policy"
+   },
+   {
+    "text": "billing_policy_environment",
+    "link": "/reference/resources/billing_policy_environment"
+   },
+   {
+    "text": "billing_policies (data)",
+    "link": "/reference/data-sources/billing_policies"
+   },
+   {
+    "text": "billing_policies_environments (data)",
+    "link": "/reference/data-sources/billing_policies_environments"
+   },
+   {
+    "text": "tenant_capacity (data)",
+    "link": "/reference/data-sources/tenant_capacity"
+   }
+  ]
+ },
+ {
+  "text": "ALM & Solutions",
+  "collapsed": true,
+  "items": [
+   {
+    "text": "environment_application_package_install",
+    "link": "/reference/resources/environment_application_package_install"
+   },
+   {
+    "text": "environment_variable_value",
+    "link": "/reference/resources/environment_variable_value"
+   },
+   {
+    "text": "managed_solution",
+    "link": "/reference/resources/managed_solution"
+   },
+   {
+    "text": "publisher",
+    "link": "/reference/resources/publisher"
+   },
+   {
+    "text": "solution",
+    "link": "/reference/resources/solution"
+   },
+   {
+    "text": "environment_application_packages (data)",
+    "link": "/reference/data-sources/environment_application_packages"
+   },
+   {
+    "text": "environment_powerapps (data)",
+    "link": "/reference/data-sources/environment_powerapps"
+   },
+   {
+    "text": "publishers (data)",
+    "link": "/reference/data-sources/publishers"
+   },
+   {
+    "text": "solution_checker_rules (data)",
+    "link": "/reference/data-sources/solution_checker_rules"
+   },
+   {
+    "text": "solutions (data)",
+    "link": "/reference/data-sources/solutions"
+   },
+   {
+    "text": "tenant_application_packages (data)",
+    "link": "/reference/data-sources/tenant_application_packages"
+   }
+  ]
+ },
+ {
+  "text": "Users & Access",
+  "collapsed": true,
+  "items": [
+   {
+    "text": "application_user",
+    "link": "/reference/resources/application_user"
+   },
+   {
+    "text": "environment_application_admin",
+    "link": "/reference/resources/environment_application_admin"
+   },
+   {
+    "text": "security_role_assignment",
+    "link": "/reference/resources/security_role_assignment"
+   },
+   {
+    "text": "user",
+    "link": "/reference/resources/user"
+   },
+   {
+    "text": "security_roles (data)",
+    "link": "/reference/data-sources/security_roles"
+   }
+  ]
+ },
+ {
+  "text": "Dataverse Data",
+  "collapsed": true,
+  "items": [
+   {
+    "text": "data_record",
+    "link": "/reference/resources/data_record"
+   },
+   {
+    "text": "rest",
+    "link": "/reference/resources/rest"
+   },
+   {
+    "text": "data_records (data)",
+    "link": "/reference/data-sources/data_records"
+   },
+   {
+    "text": "rest_query (data)",
+    "link": "/reference/data-sources/rest_query"
+   }
+  ]
+ },
+ {
+  "text": "Connectivity",
+  "collapsed": true,
+  "items": [
+   {
+    "text": "connection",
+    "link": "/reference/resources/connection"
+   },
+   {
+    "text": "connection_share",
+    "link": "/reference/resources/connection_share"
+   },
+   {
+    "text": "connection_shares (data)",
+    "link": "/reference/data-sources/connection_shares"
+   },
+   {
+    "text": "connections (data)",
+    "link": "/reference/data-sources/connections"
+   },
+   {
+    "text": "connectors (data)",
+    "link": "/reference/data-sources/connectors"
+   }
+  ]
+ },
+ {
+  "text": "Copilot & Analytics",
+  "collapsed": true,
+  "items": [
+   {
+    "text": "copilot_studio_application_insights",
+    "link": "/reference/resources/copilot_studio_application_insights"
+   },
+   {
+    "text": "analytics_data_exports (data)",
+    "link": "/reference/data-sources/analytics_data_exports"
+   }
+  ]
+ },
+ {
+  "text": "Tenant & Lookups",
+  "collapsed": true,
+  "items": [
+   {
+    "text": "currencies (data)",
+    "link": "/reference/data-sources/currencies"
+   },
+   {
+    "text": "languages (data)",
+    "link": "/reference/data-sources/languages"
+   },
+   {
+    "text": "locations (data)",
+    "link": "/reference/data-sources/locations"
+   },
+   {
+    "text": "macro_regions (data)",
+    "link": "/reference/data-sources/macro_regions"
+   },
+   {
+    "text": "tenant (data)",
+    "link": "/reference/data-sources/tenant"
+   }
+  ]
+ }
+]

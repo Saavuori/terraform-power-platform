@@ -1,0 +1,403 @@
+/*
+  Drafting-plan theme.
+  Light = drafting film with graphite ink. Dark = cyanotype.
+  Resource categories are CAD-style layers, each drawn with its own pen colour.
+*/
+
+:root {
+  --pp-film: #f1f4f6;
+  --pp-sheet: #ffffff;
+  --pp-ink: #15213a;
+  --pp-graphite: #56677d;
+  --pp-faint: #8796a8;
+  --pp-hairline: #d6dee6;
+  --pp-grid: #e4eaef;
+  --pp-grid-major: #d3dce4;
+  --pp-violet: #5e3bea;
+  --pp-violet-soft: rgba(94, 59, 234, 0.1);
+  --pp-green: #11995a;
+  --pp-red: #dd3f35;
+  --pp-amber: #b26f00;
+
+  /* layer pens */
+  --pen-environments: #2f64e8;
+  --pen-governance: #9a3fc9;
+  --pen-billing: #c98500;
+  --pen-alm: #0e9a6c;
+  --pen-access: #d93a79;
+  --pen-data: #0b97ab;
+  --pen-connectivity: #e35b1e;
+  --pen-copilot: #1f86d1;
+  --pen-tenant: #5f6f84;
+  --pen-external: #6b7a8f;
+
+  --pp-font-display: 'Archivo Variable', 'Archivo', ui-sans-serif, system-ui, sans-serif;
+  --pp-font-body: 'Atkinson Hyperlegible Next Variable', 'Atkinson Hyperlegible Next', ui-sans-serif, system-ui, sans-serif;
+  --pp-font-mono: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace;
+
+  --vp-font-family-base: var(--pp-font-body);
+  --vp-font-family-mono: var(--pp-font-mono);
+
+  --vp-c-brand-1: var(--pp-violet);
+  --vp-c-brand-2: #4f2fd6;
+  --vp-c-brand-3: #4325c2;
+  --vp-c-brand-soft: var(--pp-violet-soft);
+
+  --vp-c-bg: #ffffff;
+  --vp-c-bg-alt: var(--pp-film);
+  --vp-c-bg-soft: #eaeff3;
+  --vp-c-bg-elv: #ffffff;
+  --vp-c-text-1: var(--pp-ink);
+  --vp-c-text-2: var(--pp-graphite);
+  --vp-c-text-3: var(--pp-faint);
+  --vp-c-divider: var(--pp-hairline);
+  --vp-c-gutter: var(--pp-grid);
+  --vp-c-border: #c5d0da;
+
+  --vp-c-tip-1: var(--pp-green);
+  --vp-c-tip-soft: rgba(17, 153, 90, 0.09);
+  --vp-c-danger-1: var(--pp-red);
+  --vp-c-danger-soft: rgba(221, 63, 53, 0.09);
+  --vp-c-warning-1: var(--pp-amber);
+  --vp-c-warning-soft: rgba(201, 133, 0, 0.11);
+
+  --vp-button-brand-bg: var(--pp-ink);
+  --vp-button-brand-hover-bg: #24345a;
+  --vp-button-brand-active-bg: #0b1426;
+  --vp-button-brand-text: #ffffff;
+
+  --vp-home-hero-name-color: var(--pp-ink);
+  --vp-nav-logo-height: 26px;
+  --vp-layout-max-width: 1440px;
+}
+
+.dark {
+  --pp-film: #0b1828;
+  --pp-sheet: #0f2136;
+  --pp-ink: #dce7f5;
+  --pp-graphite: #93a7c1;
+  --pp-faint: #6c83a1;
+  --pp-hairline: #22395a;
+  --pp-grid: #11263d;
+  --pp-grid-major: #17304d;
+  --pp-violet: #a28eff;
+  --pp-violet-soft: rgba(162, 142, 255, 0.14);
+  --pp-green: #3dd08b;
+  --pp-red: #ff6b5e;
+  --pp-amber: #ffc24d;
+
+  --pen-environments: #7aa2ff;
+  --pen-governance: #d08bff;
+  --pen-billing: #ffc24d;
+  --pen-alm: #3fd6a0;
+  --pen-access: #ff7eb0;
+  --pen-data: #4fd8ea;
+  --pen-connectivity: #ff9a62;
+  --pen-copilot: #6bc0ff;
+  --pen-tenant: #a9b8cb;
+  --pen-external: #9fb0c6;
+
+  --vp-c-brand-1: var(--pp-violet);
+  --vp-c-brand-2: #8f78ff;
+  --vp-c-brand-3: #7a61f5;
+  --vp-c-brand-soft: var(--pp-violet-soft);
+
+  --vp-c-bg: #0c1a2c;
+  --vp-c-bg-alt: #091524;
+  --vp-c-bg-soft: #132840;
+  --vp-c-bg-elv: #10223a;
+  --vp-c-text-1: var(--pp-ink);
+  --vp-c-text-2: var(--pp-graphite);
+  --vp-c-text-3: var(--pp-faint);
+  --vp-c-divider: var(--pp-hairline);
+  --vp-c-gutter: #091524;
+  --vp-c-border: #2c4669;
+
+  --vp-c-tip-soft: rgba(61, 208, 139, 0.1);
+  --vp-c-danger-soft: rgba(255, 107, 94, 0.1);
+  --vp-c-warning-soft: rgba(255, 194, 77, 0.1);
+
+  --vp-button-brand-bg: var(--pp-ink);
+  --vp-button-brand-hover-bg: #ffffff;
+  --vp-button-brand-active-bg: #c4d3e8;
+  --vp-button-brand-text: #0b1828;
+}
+
+/* ------------------------------------------------------------ type */
+
+.pp-display,
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3,
+.VPNavBarTitle .title {
+  font-family: var(--pp-font-display);
+  font-stretch: 116%;
+  letter-spacing: -0.012em;
+}
+
+.vp-doc h1 {
+  font-weight: 780;
+  font-size: 34px;
+  line-height: 1.12;
+}
+
+.vp-doc h2 {
+  font-weight: 720;
+  font-size: 23px;
+  border-top: 1px solid var(--vp-c-divider);
+  padding-top: 22px;
+}
+
+.vp-doc h3 {
+  font-weight: 680;
+  font-size: 18px;
+}
+
+.vp-doc h4 {
+  font-family: var(--pp-font-display);
+  font-stretch: 100%;
+  font-weight: 650;
+}
+
+.VPNavBarTitle .title {
+  font-weight: 720;
+  font-size: 15px;
+  letter-spacing: 0;
+}
+
+/* Drafting annotation lettering: condensed, tracked capitals. */
+.pp-label {
+  font-family: var(--pp-font-display);
+  font-stretch: 76%;
+  font-weight: 640;
+  font-size: 11.5px;
+  line-height: 1.2;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--vp-c-text-2);
+}
+
+.pp-mono {
+  font-family: var(--pp-font-mono);
+  font-size: 0.86em;
+}
+
+.vp-doc p,
+.vp-doc li {
+  line-height: 1.7;
+}
+
+/* tables in generated reference pages */
+.vp-doc table {
+  display: table;
+  width: 100%;
+  font-size: 14px;
+  border-collapse: collapse;
+}
+
+.vp-doc tr {
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+.vp-doc tr:nth-child(2n) {
+  background: transparent;
+}
+
+.vp-doc th {
+  font-family: var(--pp-font-display);
+  font-stretch: 78%;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 11.5px;
+  color: var(--vp-c-text-2);
+  background: var(--vp-c-bg-alt);
+}
+
+.vp-doc td {
+  vertical-align: top;
+  padding: 9px 14px;
+  overflow-wrap: anywhere;
+}
+
+/* generated attribute tables: Attribute | Type | Description */
+.pp-attrs td:first-child {
+  min-width: 150px;
+}
+
+.pp-attrs td:nth-child(2) {
+  white-space: nowrap;
+  overflow-wrap: normal;
+  color: var(--vp-c-text-2);
+  font-size: 13px;
+}
+
+.vp-doc :not(pre) > code {
+  font-size: 0.84em;
+}
+
+.vp-doc td a,
+.vp-doc td code {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+  .vp-doc table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+/* ------------------------------------------------------------ chrome */
+
+.VPNav .VPNavBar:not(.home.top) .content-body,
+.VPNavBar .divider-line {
+  background-color: color-mix(in srgb, var(--vp-c-bg) 92%, transparent);
+}
+
+.VPSidebar {
+  background-color: var(--vp-c-bg-alt) !important;
+}
+
+@media (max-width: 480px) {
+  .VPNavBarTitle .title {
+    font-stretch: 92%;
+    font-size: 14px;
+  }
+}
+
+/* keep the nav on one line between the mobile menu and wide screens */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .VPNavBarTitle .title > span {
+    display: none;
+  }
+
+  .VPNavBarMenuLink {
+    padding: 0 9px !important;
+  }
+}
+
+.VPSidebarItem.level-0 > .item .text {
+  font-family: var(--pp-font-display);
+  font-stretch: 80%;
+  font-weight: 650 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+}
+
+.VPSidebarItem.level-1 .text {
+  font-family: var(--pp-font-mono);
+  font-size: 12.5px;
+}
+
+.custom-block {
+  border-radius: 4px;
+  border-left-width: 3px;
+}
+
+.custom-block .custom-block-title {
+  font-family: var(--pp-font-display);
+  font-stretch: 84%;
+  letter-spacing: 0.04em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--pp-violet);
+  outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------ shared ui */
+
+.pp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 38px;
+  padding: 0 16px;
+  border-radius: 4px;
+  border: 1px solid var(--pp-ink);
+  background: var(--pp-ink);
+  color: var(--pp-film);
+  font-family: var(--pp-font-display);
+  font-stretch: 96%;
+  font-weight: 640;
+  font-size: 14px;
+  text-decoration: none !important;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.pp-btn:hover {
+  transform: translateY(-1px);
+}
+
+.pp-btn.ghost {
+  background: transparent;
+  color: var(--pp-ink);
+  border-color: var(--vp-c-border);
+}
+
+.pp-btn.ghost:hover {
+  border-color: var(--pp-ink);
+}
+
+.pp-btn.small {
+  height: 30px;
+  padding: 0 11px;
+  font-size: 13px;
+}
+
+.pp-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: 999px;
+  border: 1px solid var(--vp-c-divider);
+  font-family: var(--pp-font-display);
+  font-stretch: 82%;
+  font-weight: 620;
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  color: var(--vp-c-text-2);
+  white-space: nowrap;
+}
+
+.pp-swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex: none;
+}
+
+/* full-bleed app pages (builder, relationship map) */
+.pp-app-page .VPContent.is-page {
+  padding-top: var(--vp-nav-height) !important;
+}
+
+.pp-app-page .VPPage,
+.pp-app-page .VPPage .container {
+  max-width: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.pp-app-page .VPFooter {
+  display: none;
+}
+
+.pp-app-page .vp-doc {
+  padding: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,156 @@
+---
+title: powerplatform_environments
+description: "Fetches the list of environments in a tenant."
+outline: [2, 3]
+---
+
+# powerplatform_environments
+
+<TypeHeader name="powerplatform_environments" kind="data-source" />
+
+Fetches the list of environments in a tenant.  See [Environments overview](https://learn.microsoft.com/power-platform/admin/environments-overview) for more information.
+
+## Relationships
+
+<RelationDiagram name="powerplatform_environments" kind="data-source" />
+
+## Example usage
+
+```hcl
+terraform {
+  required_providers {
+    powerplatform = {
+      source = "microsoft/power-platform"
+    }
+  }
+}
+
+provider "powerplatform" {
+  use_cli = true
+}
+
+data "powerplatform_environments" "all_environments" {}
+```
+
+## Schema
+
+### Optional
+
+<div class="pp-attrs">
+
+| Attribute | Type | Description |
+| --- | --- | --- |
+| `timeouts`  | Attributes | — · [nested schema](#nested-timeouts) |
+
+</div>
+
+### Read-only
+
+<div class="pp-attrs">
+
+| Attribute | Type | Description |
+| --- | --- | --- |
+| `environments`  | Attributes List | List of environments · [nested schema](#nested-environments) |
+
+</div>
+
+### Nested schemas
+
+#### `timeouts` {#nested-timeouts}
+
+**Optional**
+
+<div class="pp-attrs">
+
+| Attribute | Type | Description |
+| --- | --- | --- |
+| `read`  | String | A string that can be [parsed as a duration](https://pkg.go.dev/time#ParseDuration) consisting of numbers and unit suffixes, such as "30s" or "2h45m". Valid time units are "s" (seconds), "m" (minutes), "h" (hours). Read operations occur during any refresh or planning operation when refresh is enabled. |
+
+</div>
+
+#### `environments` {#nested-environments}
+
+**Optional**
+
+<div class="pp-attrs">
+
+| Attribute | Type | Description |
+| --- | --- | --- |
+| `timeouts`  | Attributes | — · [nested schema](#nested-environments-timeouts) |
+
+</div>
+
+**Read-only**
+
+<div class="pp-attrs">
+
+| Attribute | Type | Description |
+| --- | --- | --- |
+| `allow_bing_search`  | Boolean | Allow Bing search in the environment |
+| `allow_flex_routing`  | Boolean | Allows large language model (LLM) inferencing to occur outside of the European Union (EU) Data Boundary during periods of peak load, to help maintain a consistent Copilot experience. Data is encrypted in transit and at rest, and data at rest continues to be stored inside the EU Data Boundary, except for limited pseudonymized data that may be stored outside of it for security and operational purposes. See [Flex routing during peak load periods](https://go.microsoft.com/fwlink/?linkid=2356920) for more information. |
+| `allow_microsoft_365_services`  | Boolean | Allows users in the environment to use features powered by Microsoft 365 services. When enabled, data is sent to Microsoft 365 services that operate outside of the Azure compliance boundary and are governed by the Microsoft 365 terms. When disabled, features powered by Microsoft 365 services are unavailable. See [Microsoft 365 services in Power Platform](https://go.microsoft.com/fwlink/?linkid=2302907) for more information. |
+| `allow_moving_data_across_regions`  | Boolean | Allow moving data across regions |
+| `azure_region`  | String | Azure region of the environment (westeurope, eastus etc.). Can be queried using the `powerplatform_locations` data source. |
+| `billing_policy_id`  | String | Billing policy id (guid) for pay-as-you-go environments using Azure subscription billing |
+| `cadence`  | String | Cadence of updates for the environment (Frequent, Moderate) |
+| `dataverse`  | Attributes | Dataverse environment details · [nested schema](#nested-environments-dataverse) |
+| `description`  | String | Description |
+| `display_name`  | String | Display name |
+| `enterprise_policies`  | Attributes Set | Enterprise policies for the environment. See [Enterprise policies](https://learn.microsoft.com/en-us/power-platform/admin/enterprise-policies) for more details. · [nested schema](#nested-environments-enterprise-policies) |
+| `environment_group_id`  | String | Environment group id (guid) that the environment belongs to. Empty guid `00000000-0000-0000-0000-000000000000` is considered as no environment group. |
+| `environment_type`  | String | Type of the environment (Sandbox, Production etc.) |
+| `id`  | String | Environment id (guid) |
+| `location`  | String | Location of the environment (europe, unitedstates etc.). Can be queried using the `powerplatform_locations` data source. |
+| `macro_region`  | String | Macro region geography of the environment (`eu-efta`, `north-america` etc.). Can be queried using the `powerplatform_macro_regions` data source. |
+| `owner_id`  | String | Entra ID  user id (guid) of the environment owner when creating developer environment |
+| `release_cycle`  | String | Gives you the ability to create environments that are updated first. This allows you to experience and validate scenarios that are important to you before any updates reach your business-critical applications. See [more](https://learn.microsoft.com/en-us/power-platform/admin/early-release). |
+
+</div>
+
+#### `environments.timeouts` {#nested-environments-timeouts}
+
+#### `environments.dataverse` {#nested-environments-dataverse}
+
+**Read-only**
+
+<div class="pp-attrs">
+
+| Attribute | Type | Description |
+| --- | --- | --- |
+| `administration_mode_enabled`  | Boolean | Select to enable administration mode for the environment. See [Admin mode](https://learn.microsoft.com/en-us/power-platform/admin/admin-mode) for more information. |
+| `background_operation_enabled`  | Boolean | Background operation status for the environment. See [Admin mode](https://learn.microsoft.com/en-us/power-platform/admin/admin-mode) for more information. |
+| `currency_code`  | String | Currency name (EUR, USE, GBP etc.) |
+| `domain`  | String | Domain name of the environment |
+| `language_code`  | Number | Language LCID (integer) |
+| `linked_app_id`  | String | Linked app id (guid) |
+| `linked_app_type`  | String | Type of the linked app (Internal, External etc.) |
+| `linked_app_url`  | String | URL of the linked D365 app |
+| `organization_id`  | String | Organization id (guid) |
+| `security_group_id`  | String | Security group id (guid) |
+| `template_metadata`  | String | Additional D365 environment template metadata (if any) |
+| `templates`  | List of String | The selected instance provisioning template (if any). See [ERP-based template](https://learn.microsoft.com/en-us/power-platform/admin/unified-experience/tutorial-deploy-new-environment-with-erp-template?tabs=PPAC) for more information. |
+| `unique_name`  | String | Unique name of the Dataverse environment |
+| `url`  | String | Url of the environment |
+| `version`  | String | Version of the environment |
+
+</div>
+
+#### `environments.enterprise_policies` {#nested-environments-enterprise-policies}
+
+**Read-only**
+
+<div class="pp-attrs">
+
+| Attribute | Type | Description |
+| --- | --- | --- |
+| `id`  | String | Id (guid) |
+| `location`  | String | Location of the policy |
+| `status`  | String | Link status of the policy |
+| `system_id`  | String | System id (guid) |
+| `type`  | String | Type of the policy according to [schema definition](https://learn.microsoft.com/en-us/azure/templates/microsoft.powerplatform/enterprisepolicies?pivots=deployment-language-terraform#enterprisepolicies-2) |
+
+</div>
+
+---
+
+<small>Data source generated from the upstream schema docs (provider v4.2.1). [Terraform Registry](https://registry.terraform.io/providers/microsoft/power-platform/latest/docs/data-sources/environments) · [Go source](https://github.com/microsoft/terraform-provider-power-platform/blob/main/internal/services/environment/datasource_environments.go)</small>
