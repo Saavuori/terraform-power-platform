@@ -2,6 +2,7 @@
 title: powerplatform_rbac_role_assignments
 description: "Fetches the role assignments in Power Platform."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_rbac_role_assignments

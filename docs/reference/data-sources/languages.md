@@ -2,6 +2,7 @@
 title: powerplatform_languages
 description: "Fetches the list of Dynamics 365 languages."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_languages

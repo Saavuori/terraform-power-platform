@@ -2,6 +2,7 @@
 title: powerplatform_environments
 description: "Fetches the list of environments in a tenant."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_environments

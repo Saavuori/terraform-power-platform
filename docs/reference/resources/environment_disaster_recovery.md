@@ -2,6 +2,7 @@
 title: powerplatform_environment_disaster_recovery
 description: "Manages Disaster Recovery for a Power Platform environment."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_environment_disaster_recovery

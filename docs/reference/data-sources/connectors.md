@@ -2,6 +2,7 @@
 title: powerplatform_connectors
 description: "Fetches the list of available connectors within a specific Power Platform tenant."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_connectors

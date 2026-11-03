@@ -2,6 +2,7 @@
 title: powerplatform_rest
 description: "Deprecated: powerplatformrest will be removed in v5.0.0."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_rest

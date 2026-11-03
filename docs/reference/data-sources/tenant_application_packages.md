@@ -2,6 +2,7 @@
 title: powerplatform_tenant_application_packages
 description: "Fetches the list of Dynamics 365 tenant level applications"
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_tenant_application_packages

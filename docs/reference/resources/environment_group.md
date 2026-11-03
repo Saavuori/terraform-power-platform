@@ -2,6 +2,7 @@
 title: powerplatform_environment_group
 description: "This resource manages an Environment Group."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_environment_group

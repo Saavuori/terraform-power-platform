@@ -2,6 +2,7 @@
 title: powerplatform_billing_policy
 description: "Manages a Power Platform Billing Policy."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_billing_policy

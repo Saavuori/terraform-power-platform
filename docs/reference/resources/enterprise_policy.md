@@ -2,6 +2,7 @@
 title: powerplatform_enterprise_policy
 description: "Enterprise Policy environment assignment"
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_enterprise_policy

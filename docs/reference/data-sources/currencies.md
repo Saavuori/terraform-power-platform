@@ -2,6 +2,7 @@
 title: powerplatform_currencies
 description: "Fetches the list of available Dynamics 365 currencies."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_currencies

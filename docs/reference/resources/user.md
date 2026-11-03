@@ -2,6 +2,7 @@
 title: powerplatform_user
 description: "This resource associates a user to a Power Platform environment."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_user

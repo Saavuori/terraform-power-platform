@@ -2,6 +2,7 @@
 title: powerplatform_environment_settings
 description: "Power Platform Environment Settings Data Source."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_environment_settings

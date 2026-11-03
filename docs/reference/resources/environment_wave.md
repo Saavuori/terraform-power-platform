@@ -2,6 +2,7 @@
 title: powerplatform_environment_wave
 description: "Manages wave feature installation in a Power Platform environment."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_environment_wave

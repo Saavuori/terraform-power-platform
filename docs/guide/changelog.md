@@ -2,6 +2,7 @@
 title: What changed
 description: Recent releases of the Power Platform Terraform provider and what is coming in v5.0.0.
 outline: [2, 3]
+editLink: false
 ---
 
 # What changed

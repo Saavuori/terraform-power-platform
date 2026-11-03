@@ -2,6 +2,7 @@
 title: powerplatform_environment_templates
 description: "Fetches the list of Dynamics 365 environment templates."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_environment_templates

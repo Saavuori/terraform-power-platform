@@ -2,6 +2,7 @@
 title: powerplatform_environment_application_package_install
 description: "This resource allows you to install a Dynamics 365 application in an environment."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_environment_application_package_install

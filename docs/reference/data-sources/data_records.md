@@ -2,6 +2,7 @@
 title: powerplatform_data_records
 description: "Resource for retrieving data records from Dataverse using (OData Query)[https://learn.microsoft.com/en-us/power-apps/developer/data-platform/webapi/query-data-web-api#page-results]."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_data_records

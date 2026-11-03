@@ -2,6 +2,7 @@
 title: powerplatform_environment_application_packages
 description: "Fetches the list of Dynamics 365 applications in a tenant."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_environment_application_packages

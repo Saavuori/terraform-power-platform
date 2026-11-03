@@ -2,6 +2,7 @@
 title: powerplatform_connection_share
 description: ""
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_connection_share

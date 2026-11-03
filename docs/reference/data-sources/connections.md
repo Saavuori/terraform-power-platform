@@ -2,6 +2,7 @@
 title: powerplatform_connections
 description: "Fetches a list of Connection for a given environment."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_connections

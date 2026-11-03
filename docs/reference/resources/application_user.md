@@ -2,6 +2,7 @@
 title: powerplatform_application_user
 description: "Manages the unique active Dataverse application user for a Microsoft Entra service principal within an environment using the Dataverse systemusers API."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_application_user

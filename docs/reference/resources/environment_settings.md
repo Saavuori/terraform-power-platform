@@ -2,6 +2,7 @@
 title: powerplatform_environment_settings
 description: "Manages Power Platform Settings for a given environment."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_environment_settings

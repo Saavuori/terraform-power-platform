@@ -2,6 +2,7 @@
 title: powerplatform_solution
 description: "Deprecated: powerplatformsolution will be replaced in v5.0.0 by powerplatformmanagedsolution for managed solutions and powerplatformunmanagedsolution for unmanaged solutions."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_solution

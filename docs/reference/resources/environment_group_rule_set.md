@@ -2,6 +2,7 @@
 title: powerplatform_environment_group_rule_set
 description: "Allows the creation of environment group rulesets."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_environment_group_rule_set

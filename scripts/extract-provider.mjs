@@ -541,6 +541,7 @@ function renderPage(doc) {
   lines.push(`title: ${doc.name}`)
   lines.push(`description: ${JSON.stringify(doc.summary)}`)
   lines.push('outline: [2, 3]')
+  lines.push('editLink: false')
   lines.push('---')
   lines.push('')
   lines.push(`# ${doc.name}`)
@@ -655,7 +656,7 @@ const linkTypes = (text) =>
   safeInline(text)
     .replace(/\[#(\d+)\]\((https:[^)]+)\)/g, '[#$1]($2)')
     .replace(/`(powerplatform_[a-z_]+)`/g, (m, name) => (known.has(name) ? `[\`${name}\`](${known.get(name)})` : m))
-const cl = ['---', 'title: What changed', 'description: Recent releases of the Power Platform Terraform provider and what is coming in v5.0.0.', 'outline: [2, 3]', '---', '', '# What changed', '']
+const cl = ['---', 'title: What changed', 'description: Recent releases of the Power Platform Terraform provider and what is coming in v5.0.0.', 'outline: [2, 3]', 'editLink: false', '---', '', '# What changed', '']
 cl.push(`The latest releases of \`${provider.name}\`, taken from the upstream [CHANGELOG.md](${REPO}/blob/main/CHANGELOG.md). Type names link to their reference pages.`, '')
 const upcoming = [...resources, ...dataSources].filter((d) => d.deprecation || d.breakingChange)
 if (upcoming.length) {

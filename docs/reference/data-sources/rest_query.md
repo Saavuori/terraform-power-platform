@@ -2,6 +2,7 @@
 title: powerplatform_rest_query
 description: "Datasource to fetch api requests"
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_rest_query

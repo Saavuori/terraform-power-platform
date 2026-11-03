@@ -2,6 +2,7 @@
 title: powerplatform_rbac_role_assignment
 description: "Manages a Power Platform administrative role assignment."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_rbac_role_assignment

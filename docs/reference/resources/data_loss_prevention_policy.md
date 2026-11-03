@@ -2,6 +2,7 @@
 title: powerplatform_data_loss_prevention_policy
 description: "This resource manages a Data Loss Prevention Policy."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_data_loss_prevention_policy

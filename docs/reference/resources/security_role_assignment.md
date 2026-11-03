@@ -2,6 +2,7 @@
 title: powerplatform_security_role_assignment
 description: "Assigns a single Dataverse security role to a principal: a user, an application user, or a team."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_security_role_assignment

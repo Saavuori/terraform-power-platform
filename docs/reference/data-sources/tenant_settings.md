@@ -2,6 +2,7 @@
 title: powerplatform_tenant_settings
 description: "Fetches Power Platform Tenant Settings."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_tenant_settings

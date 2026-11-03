@@ -2,6 +2,7 @@
 title: powerplatform_data_loss_prevention_policies
 description: "Fetches the list of Data Loss Prevention Policies in a Power Platform tenant."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_data_loss_prevention_policies

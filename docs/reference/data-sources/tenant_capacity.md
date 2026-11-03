@@ -2,6 +2,7 @@
 title: powerplatform_tenant_capacity
 description: "Fetches the capacity information for a given tenant."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_tenant_capacity

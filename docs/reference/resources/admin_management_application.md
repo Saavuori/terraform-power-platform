@@ -2,6 +2,7 @@
 title: powerplatform_admin_management_application
 description: "This resource allows you to register a service principal as an administrator for Power Platform."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_admin_management_application

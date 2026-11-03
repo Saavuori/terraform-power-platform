@@ -2,6 +2,7 @@
 title: powerplatform_solution_checker_rules
 description: "Fetches the list of solution checker rules for a Power Platform environment."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_solution_checker_rules

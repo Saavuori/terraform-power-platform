@@ -2,6 +2,7 @@
 title: powerplatform_role_definitions
 description: "Fetches available role definitions from Power Platform."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_role_definitions

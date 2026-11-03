@@ -2,6 +2,7 @@
 title: powerplatform_environment_powerapps
 description: "Fetches the list of Power Apps in an environment."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_environment_powerapps

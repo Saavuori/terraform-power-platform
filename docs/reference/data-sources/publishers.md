@@ -2,6 +2,7 @@
 title: powerplatform_publishers
 description: "Fetches the list of Dataverse publishers in an environment."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_publishers

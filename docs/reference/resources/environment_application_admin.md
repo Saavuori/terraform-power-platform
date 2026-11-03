@@ -2,6 +2,7 @@
 title: powerplatform_environment_application_admin
 description: "Ensures a Microsoft Entra service principal exists in a Dataverse environment as an application user with the System Administrator role."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_environment_application_admin

@@ -2,6 +2,7 @@
 title: powerplatform_tenant_isolation_policy
 description: "Manages a Power Platform tenant isolation policy."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_tenant_isolation_policy

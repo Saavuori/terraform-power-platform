@@ -2,6 +2,7 @@
 title: powerplatform_environment_variable_value
 description: "Manages the current value for an existing Power Platform environment variable definition."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_environment_variable_value

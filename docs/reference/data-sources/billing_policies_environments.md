@@ -2,6 +2,7 @@
 title: powerplatform_billing_policies_environments
 description: "Fetches the environments associated with a billing policy."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_billing_policies_environments

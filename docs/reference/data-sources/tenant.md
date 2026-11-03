@@ -2,6 +2,7 @@
 title: powerplatform_tenant
 description: "Fetches the client configuration for the given tenant."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_tenant

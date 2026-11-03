@@ -2,6 +2,7 @@
 title: powerplatform_security_roles
 description: "Fetches the list of Dataverse security roles for a given environment and business unit."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_security_roles

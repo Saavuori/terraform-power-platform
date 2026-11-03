@@ -2,6 +2,7 @@
 title: powerplatform_solutions
 description: "Fetches the list of Solutions in an environment."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_solutions

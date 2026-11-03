@@ -2,6 +2,7 @@
 title: powerplatform_data_record
 description: "The Power Platform Data Record Resource allows the management of configuration records that are stored in Dataverse as records."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_data_record

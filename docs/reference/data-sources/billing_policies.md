@@ -2,6 +2,7 @@
 title: powerplatform_billing_policies
 description: "Fetches the list of billing policies in a tenant."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_billing_policies

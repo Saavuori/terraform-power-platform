@@ -2,6 +2,7 @@
 title: powerplatform_connection
 description: "Manages a Connection."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_connection

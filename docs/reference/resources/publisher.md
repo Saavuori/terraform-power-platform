@@ -2,6 +2,7 @@
 title: powerplatform_publisher
 description: "Manages a Dataverse publisher record."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_publisher

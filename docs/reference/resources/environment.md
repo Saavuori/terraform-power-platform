@@ -2,6 +2,7 @@
 title: powerplatform_environment
 description: "This resource manages a PowerPlatform environment."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_environment

@@ -2,6 +2,7 @@
 title: powerplatform_copilot_studio_application_insights
 description: "Manages the Application Insights configuration for a Copilot."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_copilot_studio_application_insights

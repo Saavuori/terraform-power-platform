@@ -2,6 +2,7 @@
 title: powerplatform_managed_solution
 description: "Resource for deploying managed Power Platform solutions using solution identity (uniquename + version) instead of package checksums or delivery locations."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_managed_solution

@@ -2,6 +2,7 @@
 title: powerplatform_macro_regions
 description: "Fetches the macro region geographies available to this tenant."
 outline: [2, 3]
+editLink: false
 ---
 
 # powerplatform_macro_regions
